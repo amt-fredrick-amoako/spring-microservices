@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: ordering-api
+  data:
+    jpa:
+      repositories:
+        enabled: true
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    driver-class-name: org.postgresql.Driver
+    password: password
+    username: admin
+server:
+  port: 3001
+
+email:
+  from: fredrickamoako@gmail.com
+  api-key:
+  from-name: freddie
+
+logging:
+  level:
+    org:
+      springframework:
+        beans: DEBUG
+        context.annotation: TRACE
+        boot.autoconfigure: DEBUG
+
+debug: true
+
+trace: true
