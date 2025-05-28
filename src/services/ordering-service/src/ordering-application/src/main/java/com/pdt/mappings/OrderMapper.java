@@ -6,7 +6,7 @@ import com.pdt.models.OrdersVm;
 import com.pdt.models.UpdateOrder;
 import org.mapstruct.Mapper;
 
-@Mapper
+@Mapper(componentModel = "spring")
 public interface OrderMapper {
     Order toOrder(CheckoutOrder checkoutOrder);
     CheckoutOrder toCheckoutOrder(Order order);

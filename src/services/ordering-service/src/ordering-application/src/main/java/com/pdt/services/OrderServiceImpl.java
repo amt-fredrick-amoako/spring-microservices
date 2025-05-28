@@ -1,10 +1,10 @@
 package com.pdt.services;
 
 import com.pdt.contracts.infrastructure.EmailService;
+import com.pdt.contracts.persistence.OrderRepository;
 import com.pdt.entities.Order;
 import com.pdt.mappings.OrderMapper;
 import com.pdt.models.*;
-import com.pdt.repositories.OrderRepository;
 import com.pdt.services.contracts.OrderService;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.stereotype.Service;

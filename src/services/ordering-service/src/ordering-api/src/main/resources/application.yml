@@ -1,12 +1,13 @@
 spring:
   application:
     name: ordering-api
-  data:
-    jpa:
-      repositories:
-        enabled: true
+  jpa:
+    database-platform: org.hibernate.dialect.Postgres
+    hibernate:
+      ddl-auto: update
+    show-sql: true
   datasource:
-    url: jdbc:postgresql://localhost:5432/postgres
+    url: jdbc:postgresql://localhost:5432/orders
     driver-class-name: org.postgresql.Driver
     password: password
     username: admin
