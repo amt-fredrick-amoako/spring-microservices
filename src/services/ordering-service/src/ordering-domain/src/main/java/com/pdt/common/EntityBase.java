@@ -1,5 +1,7 @@
 package com.pdt.common;
 
+import com.pdt.entities.EntityId;
+import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Id;
 import jakarta.persistence.MappedSuperclass;
 
@@ -7,8 +9,8 @@ import java.time.Instant;
 
 @MappedSuperclass
 public abstract class EntityBase {
-    @Id
-    private Long id;
+    @EmbeddedId
+    private EntityId id;
     private String createdBy;
     private Instant createdDate;
     private String lastModifiedBy;
@@ -46,11 +48,11 @@ public abstract class EntityBase {
         this.createdBy = createdBy;
     }
 
-    public Long getId() {
+    public EntityId getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(EntityId id) {
         this.id = id;
     }
 }

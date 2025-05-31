@@ -1,10 +1,16 @@
 package com.pdt.contracts.persistence;
 
 import com.pdt.entities.Order;
-import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
+import java.util.Optional;
 
-public interface OrderRepository extends JpaRepository<Order, Long> {
+public interface OrderRepository {
     List<Order> findAllByUsername(String username);
+
+    Order save(Order order);
+
+    void delete(Order orderToDelete);
+
+    Optional<Order> findById(Long id);
 }

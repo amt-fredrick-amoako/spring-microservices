@@ -2,14 +2,14 @@ spring:
   application:
     name: ordering-api
   jpa:
-    database-platform: org.hibernate.dialect.Postgres
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
     hibernate:
-      ddl-auto: update
+      ddl-auto: create
     show-sql: true
   datasource:
     url: jdbc:postgresql://localhost:5432/orders
     driver-class-name: org.postgresql.Driver
-    password: password
+    password: admin1234
     username: admin
   rabbitmq:
     host: localhost
@@ -38,8 +38,3 @@ logging:
       springframework:
         beans: DEBUG
         context.annotation: TRACE
-        boot.autoconfigure: DEBUG
-
-debug: true
-
-trace: true

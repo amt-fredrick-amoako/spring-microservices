@@ -2,6 +2,7 @@ package com.pdt.services;
 
 import com.pdt.contracts.infrastructure.EmailService;
 import com.pdt.contracts.persistence.OrderRepository;
+import com.pdt.entities.EntityId;
 import com.pdt.entities.Order;
 import com.pdt.mappings.OrderMapper;
 import com.pdt.models.*;
@@ -36,7 +37,7 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public Long checkout(CheckoutOrder checkoutOrder) {
+    public EntityId checkout(CheckoutOrder checkoutOrder) {
         Order order = orderMapper.toOrder(checkoutOrder);
         Order savedOrder = orderRepository.save(order);
         sendMail(savedOrder);
