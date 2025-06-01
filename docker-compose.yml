@@ -1,0 +1,13 @@
+
+services:
+  order-db:
+    image: postgres
+
+  basket-db:
+    image: redis:alpine
+
+  rabbitmq:
+    image: rabbitmq:3-management-alpine
+
+volumes:
+  postgres_data:

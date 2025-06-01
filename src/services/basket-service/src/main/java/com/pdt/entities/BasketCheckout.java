@@ -3,7 +3,7 @@ package com.pdt.entities;
 import java.math.BigDecimal;
 
 public record BasketCheckout(String username,
-                             BigDecimal totalPrice,
+                             double totalPrice,
                              String firstName,
                              String lastName,
                              String emailAddress,
