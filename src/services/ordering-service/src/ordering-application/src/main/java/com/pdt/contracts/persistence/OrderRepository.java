@@ -1,5 +1,6 @@
 package com.pdt.contracts.persistence;
 
+import com.pdt.entities.EntityId;
 import com.pdt.entities.Order;
 
 import java.util.List;
@@ -12,5 +13,5 @@ public interface OrderRepository {
 
     void delete(Order orderToDelete);
 
-    Optional<Order> findById(Long id);
+    Optional<Order> findById(EntityId id);
 }

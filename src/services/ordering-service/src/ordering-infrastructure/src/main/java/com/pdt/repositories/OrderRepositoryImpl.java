@@ -3,6 +3,7 @@ package com.pdt.repositories;
 import com.pdt.annotations.ApplicationService;
 import com.pdt.contracts.persistence.OrderRepository;
 import com.pdt.data.OrderJpaRepository;
+import com.pdt.entities.EntityId;
 import com.pdt.entities.Order;
 import org.springframework.stereotype.Repository;
 
@@ -34,7 +35,7 @@ public class OrderRepositoryImpl implements OrderRepository {
     }
 
     @Override
-    public Optional<Order> findById(Long id) {
+    public Optional<Order> findById(EntityId id) {
         return orderJpaRepository.findById(id);
     }
 

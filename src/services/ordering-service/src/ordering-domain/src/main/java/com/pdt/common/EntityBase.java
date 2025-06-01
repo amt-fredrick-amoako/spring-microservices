@@ -6,6 +6,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.MappedSuperclass;
 
 import java.time.Instant;
+import java.util.UUID;
 
 @MappedSuperclass
 public abstract class EntityBase {
@@ -15,6 +16,10 @@ public abstract class EntityBase {
     private Instant createdDate;
     private String lastModifiedBy;
     private Instant lastModifiedDate;
+
+    public EntityBase(){
+        setId(new EntityId());
+    }
 
     public Instant getLastModifiedDate() {
         return lastModifiedDate;

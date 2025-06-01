@@ -35,7 +35,6 @@ public class OrderServiceImpl implements OrderService {
         }
         return ordersVms;
     }
-
     @Override
     public EntityId checkout(CheckoutOrder checkoutOrder) {
         Order order = orderMapper.toOrder(checkoutOrder);
@@ -46,14 +45,14 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public void deleteOrder(DeleteOrder deleteOrder) throws Exception {
-        Order orderToDelete = orderRepository.findById(deleteOrder.id()).orElseThrow(() -> new EntityNotFoundException("Order not found"));
+        Order orderToDelete = orderRepository.findById(new EntityId(deleteOrder.id())).orElseThrow(() -> new EntityNotFoundException("Order not found"));
         orderRepository.delete(orderToDelete);
     }
 
     @Override
-    public void UpdateOrder(UpdateOrder updateOrder) {
+    public void updateOrder(UpdateOrder updateOrder) {
         Order orderToUpdate = orderRepository
-                .findById(updateOrder.id())
+                .findById(new EntityId(updateOrder.id()))
                 .orElseThrow(() -> new EntityNotFoundException("Order not found"));
         Order order = orderMapper.toOrder(updateOrder);
         orderRepository.save(order);

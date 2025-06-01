@@ -12,5 +12,5 @@ public interface OrderService {
     List<OrdersVm> getOrders(String username);
     EntityId checkout(CheckoutOrder checkoutOrder);
     void deleteOrder(DeleteOrder deleteOrder) throws Exception;
-    void UpdateOrder(UpdateOrder updateOrder);
+    void updateOrder(UpdateOrder updateOrder);
 }

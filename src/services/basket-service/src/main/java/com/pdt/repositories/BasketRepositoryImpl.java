@@ -24,7 +24,8 @@ public class BasketRepositoryImpl implements BasketRepository {
     @Override
     public ShoppingCart updateShoppingCart(ShoppingCart basket) {
         redisTemplate.opsForValue().set(basket.username(), basket);
-        return basket;
+
+        return getBasket(basket.username()).orElse(null);
     }
 
     @Override

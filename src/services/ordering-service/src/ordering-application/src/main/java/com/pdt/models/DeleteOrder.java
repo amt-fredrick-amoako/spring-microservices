@@ -1,4 +1,6 @@
 package com.pdt.models;
 
-public record DeleteOrder(Long id) {
+import java.util.UUID;
+
+public record DeleteOrder(UUID id) {
 }

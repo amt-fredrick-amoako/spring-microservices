@@ -1,20 +1,20 @@
 package com.pdt.events;
 
 public class BasketCheckoutEvent extends IntegrationBaseEvent {
-    public String username;
-    public String firstName;
-    public String lastName;
-    public String emailAddress;
-    public String addressLine;
-    public String country;
-    public String state;
-    public String zipCode;
-    public String cardNumber;
-    public String cardName;
-    public String expiration;
-    public String cvv;
-    public int paymentMethod;
-    public String totalPrice;
+    private String username;
+    private String firstName;
+    private String lastName;
+    private String emailAddress;
+    private String addressLine;
+    private String country;
+    private String state;
+    private String zipCode;
+    private String cardNumber;
+    private String cardName;
+    private String expiration;
+    private String cvv;
+    private double totalPrice;
+    private int paymentMethod;
 
     public String getUsername() {
         return username;
@@ -120,11 +120,11 @@ public class BasketCheckoutEvent extends IntegrationBaseEvent {
         this.paymentMethod = paymentMethod;
     }
 
-    public String getTotalPrice() {
+    public double getTotalPrice() {
         return totalPrice;
     }
 
-    public void setTotalPrice(String totalPrice) {
+    public void setTotalPrice(double totalPrice) {
         this.totalPrice = totalPrice;
     }
 }

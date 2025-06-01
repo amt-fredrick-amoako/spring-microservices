@@ -24,13 +24,18 @@ spring:
           max-attempts: 3
           max-interval: 10000ms
           multiplier: 2.0
+  threads:
+    virtual:
+      enabled: on
 server:
   port: 3001
 
 email:
-  from: fredrickamoako@gmail.com
-  api-key:
+  from: amalitech.welfare@gmail.com
   from-name: freddie
+  password: lyag lyaw ohpn oqes
+  host: smtp.gmail.com
+  port: 587
 
 logging:
   level:
@@ -38,3 +43,6 @@ logging:
       springframework:
         beans: DEBUG
         context.annotation: TRACE
+
+basketCheckoutQueue:
+  name: basket.updated.queue
