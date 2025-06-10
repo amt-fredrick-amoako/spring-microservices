@@ -9,7 +9,7 @@
     </parent>
 
     <artifactId>catalog-service</artifactId>
-    <packaging>pom</packaging>
+    <packaging>jar</packaging>
 
     <name>catalog-service</name>
     <url>http://maven.apache.org</url>

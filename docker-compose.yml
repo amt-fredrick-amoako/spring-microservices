@@ -9,5 +9,9 @@ services:
   rabbitmq:
     image: rabbitmq:3-management-alpine
 
+  catalog-db:
+    image: mongo:4.4
+
 volumes:
   postgres_data:
+  mongo_data:

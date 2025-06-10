@@ -18,10 +18,10 @@
 
   <modules>
     <module>src/services/basket-service</module>
-    <module>src/services/catalog-service</module>
     <module>src/common</module>
     <module>src/services/ordering-service</module>
     <module>src/services/discount-service</module>
+    <module>src/services/catalog-service</module>
   </modules>
 
   <properties>
