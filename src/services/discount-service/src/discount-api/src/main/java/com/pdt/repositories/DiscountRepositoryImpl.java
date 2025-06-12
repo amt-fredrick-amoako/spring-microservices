@@ -2,6 +2,7 @@ package com.pdt.repositories;
 
 import com.pdt.entities.Coupon;
 import org.springframework.dao.DataAccessException;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.ResultSetExtractor;
 import org.springframework.stereotype.Repository;
@@ -21,14 +22,13 @@ public class DiscountRepositoryImpl implements DiscountRepository {
     @Override
     public Coupon getDiscount(String productName) {
         String sql = "SELECT * FROM Coupon WHERE product_name = ?";
-        Coupon query = jdbcTemplate.query(sql, new CouponExtractor(), productName);
-        return query;
+        return jdbcTemplate.query(sql, new CouponExtractor(), productName);
     }
 
     @Override
     public boolean createDiscount(Coupon coupon) {
         String sql = """
-                INSERT INTO Coupon (product_name, description, amount) VALUES (? ? ?)
+                INSERT INTO Coupon (product_name, description, amount) VALUES (?, ?, ?)
                 """;
         int affectedRows = jdbcTemplate.update(sql, coupon.getProductName(), coupon.getDescription(), coupon.getAmount());
         return affectedRows > 0;
@@ -64,9 +64,9 @@ public class DiscountRepositoryImpl implements DiscountRepository {
                 coupon.setAmount(rs.getInt("amount"));
             }
         }
-//        if (coupon == null) {
-//            throw new EmptyResultDataAccessException(1);
-//        }
+        if (coupon == null) {
+            throw new EmptyResultDataAccessException(1);
+        }
         return coupon;
     }
 }
