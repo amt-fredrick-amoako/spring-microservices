@@ -22,6 +22,7 @@
     <module>src/services/ordering-service</module>
     <module>src/services/discount-service</module>
     <module>src/services/catalog-service</module>
+    <module>src/cloud</module>
   </modules>
 
   <properties>
