@@ -10,17 +10,6 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @ConfigurationPropertiesScan(basePackages = {
         "com.pdt.configurations",
 })
-//@EnableJpaRepositories(basePackages = {"com.pdt.repositories", "com.pdt.data"})
-//@ComponentScan(basePackages = {
-//        "com.pdt",
-//        "com.pdt.persistence",
-//        "com.pdt.data",
-//        "com.pdt.repositories",
-//        "com.pdt.configs",
-//        "com.pdt.services",
-//        "com.pdt.mail",
-//        "com.pdt.mappings"
-//})
 public class OrderingApplication
 {
     public static void main( String[] args )

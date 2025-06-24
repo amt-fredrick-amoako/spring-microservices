@@ -18,7 +18,7 @@ public record ShoppingCart(
 
     public double getTotalPrice() {
         return items.stream()
-                .map(item -> item.price() * item.quantity())
+                .map(item -> item.getPrice() * item.getQuantity())
                 .reduce(0D, Double::sum);
     }
 }
